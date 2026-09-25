@@ -1,6 +1,14 @@
-# ELT Pipeline: PostgreSQL Docker & Data Loader
+# ELT Pipeline
 
-This project provides a persistent PostgreSQL database setup using Docker Compose along with automated scripts to create tables, truncate existing records, and bulk-load CRM and ERP CSV datasets.
+This project implements an end-to-end ELT data pipeline using PostgreSQL and Docker Compose. It loads raw CRM and ERP datasets into a Medallion Architecture (Bronze, Silver, Gold layers) and models the final layer as an analytics-ready **Star Schema**.
+
+---
+
+## 🏛️ Data Warehouse Architecture (Star Schema)
+
+The analytical data warehouse follows a **Star Schema** architecture centered around the fact table (`gold.fact_sales`) connected to business dimensions (`gold.dim_customers` and `gold.dim_products`). This design optimizes query performance, simplifies reporting, and enables seamless business intelligence and analytics.
+
+![Data Warehouse Star Schema](schema.png)
 
 ---
 
